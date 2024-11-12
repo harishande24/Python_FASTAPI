@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-import models
-from database import engine
-from routers import post,user, auth, vote
+from app import models
+from app.database import engine
+from .routers import post,user, auth, vote
 from pydantic import BaseSettings
-from config import settings
+from app.config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -53,7 +53,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 async def root():
-    return {"message": " Hello World"}
+    return {"message": "Hello World"}
 
 
 # @app.get("/sqlalchemy")

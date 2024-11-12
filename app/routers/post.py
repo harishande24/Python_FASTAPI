@@ -8,11 +8,11 @@ from passlib.context import CryptContext
 from psycopg2.extras import RealDictCursor
 import time
 from sqlalchemy.orm import Session 
-import models
-import schemas, utils, oauth2
+from app import models
+from app import schemas, utils, oauth2
 import email_validator
 from typing import Optional
-from database import engine,get_db
+from app.database import engine,get_db
 
 router = APIRouter(
     prefix= "/posts",

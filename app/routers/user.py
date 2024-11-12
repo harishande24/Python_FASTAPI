@@ -10,12 +10,10 @@ from passlib.context import CryptContext
 from psycopg2.extras import RealDictCursor
 import time
 from sqlalchemy.orm import Session 
-import models
-import schemas, utils
+from app import models
+from app import schemas, utils
 import email_validator
-from database import engine,get_db
-
-import models,schemas,utils
+from app.database import engine,get_db
 
 router = APIRouter(
     prefix="/users",
